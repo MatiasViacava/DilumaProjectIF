@@ -2,7 +2,6 @@ package pe.edu.upc.aaw.proyecto_diluma.controllers;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import pe.edu.upc.aaw.proyecto_diluma.dtos.TiposUsuarioDTO;
 import pe.edu.upc.aaw.proyecto_diluma.entities.TiposUsuario;
@@ -17,7 +16,6 @@ public class TiposUsuarioController {
     private ITipoUsuarioService tR;
 
     @PostMapping
-    @PreAuthorize("hasAuthority('PROGRAMADOR') or hasAuthority('PROGRAMADOR')")
     public void registrar(@RequestBody TiposUsuarioDTO dto){
         ModelMapper m = new ModelMapper();
         TiposUsuario d = m.map(dto, TiposUsuario.class);
@@ -25,7 +23,6 @@ public class TiposUsuarioController {
     }
 
     @GetMapping
-    @PreAuthorize("hasAuthority('ADMINISTRADOR') or hasAuthority('PROGRAMADOR')")
     public List<TiposUsuarioDTO> listar(){
         return tR.list().stream().map(x->{
             ModelMapper m = new ModelMapper();
@@ -33,14 +30,19 @@ public class TiposUsuarioController {
         }).collect(Collectors.toList());
     }
 
+    @GetMapping("/{id}")
+    public TiposUsuarioDTO listarId(@PathVariable("id") int  id) {
+        ModelMapper m=new ModelMapper();
+        TiposUsuarioDTO dto=m.map(tR.listarId(id),TiposUsuarioDTO.class);
+        return dto;
+    }
+
     @DeleteMapping("/{id}")
-    @PreAuthorize("hasAuthority('PROGRAMADOR') or hasAuthority('PROGRAMADOR')")
     public void eliminar(@PathVariable("id")Integer id){
         tR.delete(id);
     }
 
     @PutMapping
-    @PreAuthorize("hasAuthority('PROGRAMADOR') or hasAuthority('PROGRAMADOR')")
     public void modificar(@RequestBody TiposUsuarioDTO dto){
         ModelMapper m=new ModelMapper();
         TiposUsuario d=m.map(dto, TiposUsuario.class);

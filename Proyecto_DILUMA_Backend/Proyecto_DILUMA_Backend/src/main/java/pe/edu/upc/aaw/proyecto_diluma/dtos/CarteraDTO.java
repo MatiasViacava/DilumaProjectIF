@@ -46,6 +46,8 @@ public class CarteraDTO {
 
     private double tceaCartera;
 
+    private int tipoMoneda;
+
     public int getId() {
         return id;
     }
@@ -212,5 +214,13 @@ public class CarteraDTO {
 
     public void setTceaCartera(double tceaCartera) {
         this.tceaCartera = tceaCartera;
+    }
+
+    public int getTipoMoneda() {
+        return tipoMoneda;
+    }
+
+    public void setTipoMoneda(int tipoMoneda) {
+        this.tipoMoneda = tipoMoneda;
     }
 }

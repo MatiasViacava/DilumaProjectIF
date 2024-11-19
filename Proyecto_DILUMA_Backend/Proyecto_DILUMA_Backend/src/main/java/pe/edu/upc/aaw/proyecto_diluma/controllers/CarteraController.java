@@ -36,6 +36,13 @@ public class CarteraController {
         cC.delete(id);
     }
 
+    @GetMapping("/{id}")
+    public CarteraDTO listarId(@PathVariable("id") int  id) {
+        ModelMapper m=new ModelMapper();
+        CarteraDTO dto=m.map(cC.listarId(id),CarteraDTO.class);
+        return dto;
+    }
+
     @PutMapping
     public void modificar(@RequestBody CarteraDTO dto){
         ModelMapper m=new ModelMapper();

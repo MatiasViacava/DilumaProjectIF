@@ -68,9 +68,12 @@ public class Cartera {
     @Column(name = "tceaCartera",nullable = false)
     private double tceaCartera;
 
+    @Column(name = "tipoMoneda",nullable = false)
+    private int tipoMoneda;
+
     public Cartera() {}
 
-    public Cartera(int id, LocalDate fechaDescuento, int diasXAnio, double comisionActivacion, int comisionActivacionTipo, double fotocopias, int fotocopiasTipo, double estudioDeTitulos, int estudioDeTitulosTipo, double gastosAdministrativos, int gastosAdministrativosTipo, double portes, int portesTipo, double seguro, int seguroTipo, double retencion, int retencionTipo, double teaCompensatoria, int nDeInstr, double totalARecibir, double tceaCartera) {
+    public Cartera(int id, LocalDate fechaDescuento, int diasXAnio, double comisionActivacion, int comisionActivacionTipo, double fotocopias, int fotocopiasTipo, double estudioDeTitulos, int estudioDeTitulosTipo, double gastosAdministrativos, int gastosAdministrativosTipo, double portes, int portesTipo, double seguro, int seguroTipo, double retencion, int retencionTipo, double teaCompensatoria, int nDeInstr, double totalARecibir, double tceaCartera, int tipoMoneda) {
         this.id = id;
         this.fechaDescuento = fechaDescuento;
         this.diasXAnio = diasXAnio;
@@ -92,6 +95,7 @@ public class Cartera {
         this.nDeInstr = nDeInstr;
         this.totalARecibir = totalARecibir;
         this.tceaCartera = tceaCartera;
+        this.tipoMoneda = tipoMoneda;
     }
 
     public int getId() {
@@ -262,5 +266,11 @@ public class Cartera {
         this.tceaCartera = tceaCartera;
     }
 
+    public int getTipoMoneda() {
+        return tipoMoneda;
+    }
 
+    public void setTipoMoneda(int tipoMoneda) {
+        this.tipoMoneda = tipoMoneda;
+    }
 }

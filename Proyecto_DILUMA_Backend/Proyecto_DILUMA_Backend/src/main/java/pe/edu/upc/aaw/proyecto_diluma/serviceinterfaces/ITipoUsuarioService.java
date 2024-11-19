@@ -7,5 +7,6 @@ public interface ITipoUsuarioService {
     public void insert(TiposUsuario tiposUsuario);
     public List<TiposUsuario> list();
     public void delete(int IDTipoUsuario);
+    public TiposUsuario listarId(int id);
   
 }

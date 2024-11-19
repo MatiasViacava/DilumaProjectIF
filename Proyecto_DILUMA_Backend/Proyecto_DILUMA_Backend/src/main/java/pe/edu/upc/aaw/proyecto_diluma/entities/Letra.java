@@ -62,9 +62,12 @@ public class Letra {
     @Column(name = "tcea",nullable = false)
     private double tcea;
 
+    @Column(name = "tipoMoneda",nullable = false)
+    private int tipoMoneda;
+
     public Letra(){}
 
-    public Letra(int id, Cartera idCartera, Usuarios idUsuario, LocalDate fechaDeGiro, double valorNominal, LocalDate fechaDeDscto, int nDias, double tep, double d, double descuento, double costesIniciales, double costesFinales, double seguro, double retencion, double valorNeto, double valorARecibir, double flujo, double tcea) {
+    public Letra(int id, Cartera idCartera, Usuarios idUsuario, LocalDate fechaDeGiro, double valorNominal, LocalDate fechaDeDscto, int nDias, double tep, double d, double descuento, double costesIniciales, double costesFinales, double seguro, double retencion, double valorNeto, double valorARecibir, double flujo, double tcea, int tipoMoneda) {
         this.id = id;
         this.idCartera = idCartera;
         this.idUsuario = idUsuario;
@@ -83,6 +86,7 @@ public class Letra {
         this.valorARecibir = valorARecibir;
         this.flujo = flujo;
         this.tcea = tcea;
+        this.tipoMoneda = tipoMoneda;
     }
 
     public int getId() {
@@ -227,5 +231,13 @@ public class Letra {
 
     public void setTcea(double tcea) {
         this.tcea = tcea;
+    }
+
+    public int getTipoMoneda() {
+        return tipoMoneda;
+    }
+
+    public void setTipoMoneda(int tipoMoneda) {
+        this.tipoMoneda = tipoMoneda;
     }
 }

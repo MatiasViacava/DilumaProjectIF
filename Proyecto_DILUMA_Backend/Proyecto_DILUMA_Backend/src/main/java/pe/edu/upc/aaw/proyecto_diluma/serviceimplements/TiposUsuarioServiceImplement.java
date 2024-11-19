@@ -26,4 +26,10 @@ public class TiposUsuarioServiceImplement implements ITipoUsuarioService {
     public void delete(int idTipoUsuario) {
         tR.deleteById(idTipoUsuario);
     }
+
+    @Override
+    public TiposUsuario listarId(int id) {
+        return tR.findById(id).orElse(new TiposUsuario());
+    }
+
 }
