@@ -31,6 +31,13 @@ public class LetraController {
         }).collect(Collectors.toList());
     }
 
+    @GetMapping("/{id}")
+    public LetraDTO listarId(@PathVariable("id") int  id) {
+        ModelMapper m=new ModelMapper();
+        LetraDTO dto=m.map(lS.listarId(id),LetraDTO.class);
+        return dto;
+    }
+
     @DeleteMapping("/{id}")
     public void eliminar(@PathVariable("id")Integer id){
         lS.delete(id);

@@ -26,4 +26,24 @@ public class UsuarioServiceImplement implements IUsuarioService {
     public void delete(long IDUsuario) {
         iU.deleteById(IDUsuario);
     }
+
+    @Override
+    public int ultimoUsuarioCreado() {return iU.ultimoUsuarioCreado();}
+
+    @Override
+    public Usuarios listarId(Long id) {
+        return iU.findById(id).orElse(new Usuarios());
+    }
+
+    @Override
+    public void actualizarUsuario(long id,
+                                  String username,
+                                  String password,
+                                  Boolean enabled,
+                                  String nombres,
+                                  String apellidos,
+                                  String correo,
+                                  String dni,
+                                  String telefono) { iU.actualizarUsuario(id,username,password,enabled,nombres,apellidos,correo,dni,telefono);};
+
 }

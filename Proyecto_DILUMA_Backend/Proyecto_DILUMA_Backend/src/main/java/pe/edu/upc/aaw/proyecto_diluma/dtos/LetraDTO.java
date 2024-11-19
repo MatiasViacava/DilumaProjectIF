@@ -43,6 +43,8 @@ public class LetraDTO {
 
     private double tcea;
 
+    private int tipoMoneda;
+
     public int getId() {
         return id;
     }
@@ -185,5 +187,13 @@ public class LetraDTO {
 
     public void setTcea(double tcea) {
         this.tcea = tcea;
+    }
+
+    public int getTipoMoneda() {
+        return tipoMoneda;
+    }
+
+    public void setTipoMoneda(int tipoMoneda) {
+        this.tipoMoneda = tipoMoneda;
     }
 }

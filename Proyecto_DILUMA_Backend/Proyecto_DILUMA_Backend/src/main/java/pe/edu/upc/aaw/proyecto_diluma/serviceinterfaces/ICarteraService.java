@@ -10,4 +10,5 @@ public interface ICarteraService {
     public void insert(Cartera cartera);
     public List<Cartera> list();
     public void delete(int idcartera);
+    public Cartera listarId(int id);
 }
