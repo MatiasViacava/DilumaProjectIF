@@ -48,6 +48,8 @@ public class CarteraDTO {
 
     private int tipoMoneda;
 
+    private double cambio;
+
     public int getId() {
         return id;
     }
@@ -222,5 +224,13 @@ public class CarteraDTO {
 
     public void setTipoMoneda(int tipoMoneda) {
         this.tipoMoneda = tipoMoneda;
+    }
+
+    public double getCambio() {
+        return cambio;
+    }
+
+    public void setCambio(double cambio) {
+        this.cambio = cambio;
     }
 }
